@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Table {
+            constructor(data) {
+                this.data = data;
+            }
+
+            generateTable() {
+                let tableHtml = "<table border='1' align='center'>\n";
+                tableHtml += "<tr><th>Name</th><th>Email</th><th>Phone</th></tr>\n";
+
+                this.data.forEach((item) => {
+                    tableHtml += "<tr>";
+                    tableHtml += `<td>${item.name}</td>`;
+                    tableHtml += `<td>${item.email}</td>`;
+                    tableHtml += `<td>${item.phone}</td>`;
+                    tableHtml += "</tr>\n";
+                });
+
+                tableHtml += "</table>";
+                return tableHtml;
+            }
+        }
+
+        let data = [
+            {
+                name: "jay",
+                email: "jay@gmail.com",
+                phone: "12345",
+            },
+            {
+                name: "ajay",
+                email: "ajay@gmail.com",
+                phone: "12345",
+            },
+            {
+                name: "vijay",
+                email: "vijay@gmail.com",
+                phone: "12345",
+            },
+            {
+                name: "ashish",
+                email: "ashish@gmail.com",
+                phone: "12345",
+            },
+        ];
+
+        let table = new Table(data);
+
+        document.write(table.generateTable())
+    </script>
+
+</body>
+
+</html>
